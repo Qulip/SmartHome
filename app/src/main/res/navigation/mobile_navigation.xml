@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.smarthome.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_curtain"
+        android:name="com.example.smarthome.ui.curtain.CurtainFragment"
+        android:label="@string/menu_curtain"
+        tools:layout="@layout/fragment_curtain" />
+
+    <fragment
+        android:id="@+id/nav_light"
+        android:name="com.example.smarthome.ui.light.LightFragment"
+        android:label="@string/menu_light"
+        tools:layout="@layout/fragment_light" />
+
+    <fragment
+        android:id="@+id/nav_power"
+        android:name="com.example.smarthome.ui.power.PowerFragment"
+        android:label="@string/menu_power"
+        tools:layout="@layout/fragment_power" />
+</navigation>

@@ -27,6 +27,6 @@ public class Loading extends AppCompatActivity {
             public void run() {
                 finish();
             }
-        }, 4000);
+        }, 3000);                   //3초 로딩
     }
 }
