@@ -5,12 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.curtain.CurtainFragment">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/cur_whiterect"
-        android:layout_width="386dp"
-        android:layout_height="85dp"
-        android:src="@drawable/white_rect"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="16dp" />
+        <ImageView
+            android:id="@+id/cur_white"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:background="@drawable/background_shadow"
+            android:elevation="20dp"
+            android:src="@drawable/white_round"
+            android:layout_gravity="center|top"/>
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

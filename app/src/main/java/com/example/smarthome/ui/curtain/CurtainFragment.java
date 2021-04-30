@@ -32,13 +32,6 @@ public class CurtainFragment extends Fragment {
                 new ViewModelProvider(this).get(CurtainViewModel.class);
         View root = inflater.inflate(R.layout.fragment_curtain, container, false);
 
-        white_rect = (ImageView) white_rect.findViewById(R.id.cur_whiterect);
-
-        GradientDrawable drawable = (GradientDrawable) context.getDrawable(R.drawable.background_rounding);
-
-        white_rect.setBackground(drawable);
-        white_rect.setClipToOutline(true);
-
         return root;
     }
 }
