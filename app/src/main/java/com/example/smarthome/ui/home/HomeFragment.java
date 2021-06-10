@@ -24,13 +24,21 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView tempView = root.findViewById(R.id.text_temperature);
+        final TextView humidView = root.findViewById(R.id.text_humidity);
+        homeViewModel.getTemperature().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                tempView.setText(s);
             }
         });
+        homeViewModel.getHumidity().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                humidView.setText(s);
+            }
+        });
+
         return root;
     }
 }

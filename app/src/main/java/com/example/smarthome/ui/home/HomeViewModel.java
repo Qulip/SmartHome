@@ -28,12 +28,16 @@ public class HomeViewModel extends ViewModel {
     private URL Url;
     private String strUrl,strCookie,result;
     private MutableLiveData<String> mText;
+    private MutableLiveData<String> Temperature;
+    private MutableLiveData<String> Humidity;
 
     Handler handler = new Handler();
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        strUrl = "http://192.168.0.3:90/";
+        Temperature = new MutableLiveData<>();
+        Humidity = new MutableLiveData<>();
+        strUrl = "http://192.168.0.3:90/";      //내부 아이피 선언
         NetworkTask networkTask = new NetworkTask(strUrl, null);
         networkTask.execute();
     }
@@ -63,10 +67,14 @@ public class HomeViewModel extends ViewModel {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             mText.setValue(s);
+            Temperature.setValue("온도 : "+s.substring(172,174)+"'C");
+            Humidity.setValue("습도 : "+ s.substring(198,200)+"%");
         }
     }
 
     public LiveData<String> getText() {
         return mText;
     }
+    public LiveData<String> getTemperature(){ return Temperature; }
+    public LiveData<String> getHumidity(){ return Humidity; }
 }
