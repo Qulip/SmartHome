@@ -33,7 +33,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        strUrl = "https:/m.naver.com";
+        strUrl = "http://192.168.0.3:90/";
         NetworkTask networkTask = new NetworkTask(strUrl, null);
         networkTask.execute();
     }
