@@ -67,8 +67,13 @@ public class HomeViewModel extends ViewModel {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             mText.setValue(s);
-            Temperature.setValue("온도 : "+s.substring(172,174)+"'C");
-            Humidity.setValue("습도 : "+ s.substring(198,200)+"%");
+            if(s!=null) {
+                Temperature.setValue("온도 : " + s.substring(172, 174) + "'C");
+                Humidity.setValue("습도 : " + s.substring(198, 200) + "%");
+            }else{
+                Temperature.setValue("Connection Error");
+                Humidity.setValue("Connection Error");
+            }
         }
     }
 
