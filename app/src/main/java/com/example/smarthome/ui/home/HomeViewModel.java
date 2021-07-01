@@ -37,8 +37,9 @@ public class HomeViewModel extends ViewModel {
         mText = new MutableLiveData<>();
         Temperature = new MutableLiveData<>();
         Humidity = new MutableLiveData<>();
-        strUrl = "https://m.naver.com/";          //아두이노 없을경우
+        //strUrl = "https://m.naver.com/";          //아두이노 없을경우
         //strUrl = "http://192.168.0.3:90/";      //내부 아이피 선언
+        strUrl = "http://54.180.134.142:6880/";  //aws 아이피 선언
         NetworkTask networkTask = new NetworkTask(strUrl, null);
         networkTask.execute();
     }
